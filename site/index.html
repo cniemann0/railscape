@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="RailScape: a unified simulation framework covering the vehicle exterior and interior across the complete passenger-exchange cycle of autonomous train operation, built on NVIDIA Isaac Sim.">
+  <meta name="keywords" content="RailScape, autonomous train operation, ATO, railway simulation, Isaac Sim, synthetic data, scenario testing">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RailScape: A Unified Simulation Framework for Passenger and Trackside Perception</title>
+
+  <!-- Social preview -->
+  <meta property="og:title" content="RailScape: A Unified Simulation Framework for Passenger and Trackside Perception in Intelligent Railway Systems">
+  <meta property="og:description" content="A simulation framework covering the vehicle exterior and interior across the complete passenger-exchange cycle of autonomous train operation.">
+  <meta property="og:image" content="./static/images/teaser.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" type="image/png" href="./static/images/favicon.png">
+  <style>
+    .scene-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .scene-grid img {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+    }
+    /* collapse to 2 columns on small screens */
+    @media (max-width: 600px) {
+      .scene-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* extra breathing room around the header */
+    .publication-title { margin-bottom: 2.25rem; }
+    .publication-authors { font-size: 1.35rem; margin-bottom: 1rem; }
+    .publication-affiliations { margin-bottom: 0.75rem; }
+    .publication-affiliations .author-block { margin: 0 0.5rem; font-weight: 800; }
+    .corresponding-note { margin-bottom: 0.4rem; }
+    .publication-venue { margin-top: 0.4rem; }
+    .status-badge { margin-top: 0.4rem; }
+    .publication-links { margin-top: 0.75rem !important; }
+    .hero-body { padding-bottom: 1rem; }
+    .teaser .hero-body { padding-top: 1.5rem; padding-bottom: 1rem; }
+    .teaser-caption { margin-top: 1rem; margin-bottom: 0; }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">RailScape: A Unified Simulation Framework for Passenger and
+            Trackside Perception in Intelligent Railway Systems</h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Christopher Niemann<sup>1*</sup>,</span>
+            <span class="author-block">Stella Katharina Wermuth<sup>1,2</sup>,</span>
+            <span class="author-block">Hanno Meyer zu Theenhausen<sup>1</sup>,</span>
+            <span class="author-block">Thorsten Jungeblut<sup>2</sup>,</span>
+            <span class="author-block">Sven Wachsmuth<sup>1</sup></span>
+          </div>
+
+          <div class="is-size-6 publication-affiliations">
+            <span class="author-block"><sup>1</sup>Bielefeld University, Bielefeld, Germany</span> &nbsp;&nbsp;
+            <span class="author-block"><sup>2</sup>Hochschule Bielefeld University of Applied Sciences and Arts, Bielefeld, Germany</span>
+          </div>
+          <p class="corresponding-note">*Corresponding author: christopher.niemann@uni-bielefeld.de</p>
+
+          <p class="publication-venue">Submitted to IEEE ICIRT 2026 &mdash; International Conference on Intelligent
+            Rail Transportation</p>
+          <span class="status-badge">Status: under review</span>
+
+          <div class="column has-text-centered" style="margin-top: 0.25rem;">
+            <div class="publication-links">
+              <!-- Code Link -->
+              <span class="link-block">
+                <a href="https://gitlab.ub.uni-bielefeld.de/christopher.niemann/eato-sim"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-gitlab"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <!-- Contact Link -->
+              <span class="link-block">
+                <a href="mailto:christopher.niemann@uni-bielefeld.de"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-envelope"></i></span>
+                  <span>Contact</span>
+                </a>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="scene-grid">
+        <img src="./static/images/scene1.jpg" alt="Track intrusion at night">
+        <img src="./static/images/scene2.jpg" alt="Subway passenger exchange">
+        <img src="./static/images/scene3.jpg" alt="Vehicle interior while driving">
+        <img src="./static/images/scene4.jpg" alt="Trackside construction work">
+        <img src="./static/images/scene5.jpg" alt="Door-blocking luggage">
+        <img src="./static/images/scene6.jpg" alt="Person walking towards the vehicle exit">
+      </div>
+      <p class="teaser-caption has-text-centered">Generation of diverse scenarios across trackside, platform, and
+        vehicle interior, in different environments and vehicles, simulated in Isaac Sim.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Autonomous train operation (ATO) for on-sight driving, particularly for passenger transport in open
+            environments, demands perception systems that robustly interpret the environment around and inside the
+            vehicle. Since real-world data collection and system validation are costly and hard to scale, simulation
+            is essential. Existing railway simulators, however, do not address the passenger-exchange domain, where
+            the vehicle interacts with passengers at the platform and inside the vehicle. We address this gap with
+            RailScape, a simulation framework covering the vehicle exterior and interior across the complete
+            operational cycle. A dedicated railway domain model captures semantics of tracks, platforms, and vehicle
+            interiors. A probabilistic Python API specifies the dynamic behavior of passengers and vehicles through
+            randomized scenario parameters and provides an extensible toolbox of primitive behavior. An Isaac Sim
+            backend simulates sensor data with human animation, integrating existing digital models of vehicles and
+            stations through a generic interface. The framework supports applications from synthetic data generation
+            to closed-loop scenario-based testing of ATO systems. In a case study, we use it to evaluate a
+            camera-based passenger counting system during boarding under varying crowd density.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3">BibTeX</h2>
+    <p class="section-note">Citation details will be finalized upon acceptance. Current placeholder:</p>
+    <pre><code>@inproceedings{niemann2026railscape,
+  author    = {Niemann, Christopher and Wermuth, Stella Katharina and Meyer zu Theenhausen, Hanno and Jungeblut, Thorsten and Wachsmuth, Sven},
+  title     = {{RailScape}: A Unified Simulation Framework for Passenger and Trackside Perception in Intelligent Railway Systems},
+  booktitle = {IEEE International Conference on Intelligent Rail Transportation (ICIRT)},
+  year      = {2026},
+  note      = {Under review}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://gitlab.ub.uni-bielefeld.de/christopher.niemann/eato-sim" title="Code repository">
+        <i class="fab fa-gitlab"></i>
+      </a>
+      <a class="icon-link" href="mailto:christopher.niemann@uni-bielefeld.de" title="Contact">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered section-note">
+          <p>
+            This work was funded by the German Federal Ministry of Transport (BMV) within the German Center for
+            Future Mobility (DZM) as part of the enableATO project (19DZ23002B).
+          </p>
+          <p>
+            This page is based on the <a href="https://github.com/nerfies/nerfies.github.io" target="_blank">Nerfies
+            project page template</a>, licensed under a
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0
+              License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
